@@ -5,7 +5,11 @@
   padding: 8px;
 }
 .container1{
-  width:60%;
-  height: 500px;
+  width:500px;
+  height: 40px;
   border: 1px solid ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:5px;
 }
