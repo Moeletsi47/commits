@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { Octokit } from "octokit";
+import { Commit } from './componets/Commit';
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
             'X-GitHub-Api-Version': '2022-11-28'
           }
         })
-        setRepo(res);
+        setRepo(res.data);
         
       } catch (error) {
         setRepo('');
@@ -44,6 +45,7 @@ function App() {
  
   return (
     <div className="App">
+
       <div className='container1'>
  
         <input 
@@ -61,7 +63,10 @@ function App() {
           onChange= {handleReponame}
           >
         </input>
-        
+      </div>
+
+      <div className='commitsHistory'>
+         { repo.length ? repo.map(commit => <Commit key={commit.sha}  data = {commit}/>) : null  }
       </div>
     </div>
   );
