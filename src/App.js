@@ -11,7 +11,7 @@ function App() {
   useEffect( () => {
 
     const octokit = new Octokit({
-      auth: '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'
+      auth: `${process.env.REACT_APP_TOKEN}`
     })
 
     const fetchData = async () => {
