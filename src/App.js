@@ -12,7 +12,7 @@ function App() {
   useEffect( () => {
 
     const octokit = new Octokit({
-      auth: `${process.env.REACT_APP_TOKEN}`
+      auth: `${process.env.REACT_APP_API_TOKEN}`
     })
 
     const fetchData = async () => {
